@@ -1,0 +1,54 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Zoo Visitors App";
+}
+
+<!--set page heading-->
+<h1>Welcome to the Zoo Visitors App</h1>
+
+<!--create form to post when button is submitted-->
+<form method="post">
+    
+    <!--label telling user to enter an animal's hunger level-->
+    <label>Enter the animal's hunger level (1-10):</label>
+    <!--input for hungerLevel with type="number", name="hungerLevel", min="1", and max="10"-->
+    <input type="number", name="hungerLevel", min="1", max="10"/>
+    
+    <br><br>
+    
+    <!--label telling user to enter the day of the week using a number-->
+    <label>Enter the day of the week (1-7, where 1 is Sunday):</label>
+    <!--input for dayOfWeek with type="number", name="dayOfWeek", min="1", and max="7"-->
+    <input type="number", name="dayOfWeek", min="1", max="7"/>
+    
+    <br><br>
+    
+    <!--button element to post form when clicked-->
+    <button type="submit">Submit</button>
+
+</form>
+
+<!--break to seperate form and messages-->
+<br><br>
+
+<!--execute if statement if HungerMessage is not null or empty (check by converting to string first)-->
+@if (!string.IsNullOrEmpty(Model.HungerMessage.ToString()))
+{   
+    <!--display hunger message in this div-->
+    <div>
+        <p><strong>Sounds like there are some hungry animals.</strong></p>
+        <p>@Model.HungerMessage</p>
+    </div>
+
+    <!--display sound message in this div-->
+    <div>
+        <p><strong>The animals are making noise!</strong></p>
+        <p>@Model.SoundMessage</p>
+    </div>
+
+    <!--display day message in this div-->
+    <div>
+        <p><strong>Daily Event: </strong>@Model.DayMessage</p>
+    </div>
+}
