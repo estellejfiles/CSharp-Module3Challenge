@@ -19,7 +19,7 @@ namespace Module3Challenge.Pages
             if (hungerLevel >= 8) {
                 // 🦁 if hunger >= 8, set HungerMessage
                 HungerMessage = "Lion: Roar! I need a big meal!";
-            } else if (hungerLevel >=5) {
+            } else if (hungerLevel >= 5) {
                 // 🐵 if hunger >= 5, set HungerMessage
                 HungerMessage = "Monkey: Ooh ooh! I'll take some bananas.";
             } else {
@@ -35,17 +35,31 @@ namespace Module3Challenge.Pages
 
 
             // switch statement here to set DayMessage according to dayOfWeek
-            switch (dayOfWeek)
-            {   
+            switch (dayOfWeek) {   
                 // according to what number dayOfWeek is, execute case statement
-            
+                case 7:
+                    DayMessage = "Zoo After Hours";
+                    break;
+                case 6:
+                    DayMessage = "Interactive Aquatics";
+                    break;
+                case 5:
+                    DayMessage = "Animal Adventures";
+                    break;
+                case 4:
+                    DayMessage = "Reptile Meet & Greet";
+                    break;
+                case 3:
+                    DayMessage = "Goat Feeding";
+                    break;
+                case 2:
+                    DayMessage = "Conservation Classroom";
+                    break;
                 // use default for case 1, as all other cases have been stated
                 default:
-                    
+                    DayMessage = "Bird Show";
                     // include break to fall out of switch statement
                     break;
-
-
             } // end of switch statement
 
 
